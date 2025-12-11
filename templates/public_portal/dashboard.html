@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{#
+  Public user dashboard.
+
+  Context variables:
+    - today_usage_litres: int, today's water usage in litres
+    - monthly_usage_litres: int, usage for the current month
+    - alerts_today: int, number of alerts today
+#}
+{% block title %}Dashboard | Smart Water{% endblock %}
+
+{% block content %}
+
+<div class="row g-3">
+  <div class="col-md-3">
+    <div class="card text-bg-primary">
+      <div class="card-body">
+        <h6 class="card-title">Contractor's</h6>
+        <p class="display-6">
+          {{ contractors_count }} <small class="fs-6">This Month</small>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-bg-success">
+      <div class="card-body">
+        <h6 class="card-title">No. of Employee's</h6>
+        <p class="display-6">
+          {{ employees_count }} <small class="fs-6">This Month</small>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-bg-warning">
+      <div class="card-body">
+        <h6 class="card-title">Meter Replacement's</h6>
+        <p class="display-6">{{ meter_replacement_count }} <small class="fs-6">This Month</small></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="card mt-3">
+      <div class="card-header">
+        Usage trend (placeholder)
+      </div>
+      <div class="card-body">
+        {# 
+          Chart.js or another visualization can be embedded here.
+          Data should be injected via JSON or an API endpoint.
+        #}
+        <p class="text-muted mb-0">
+          Time-series water usage chart will be rendered here.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

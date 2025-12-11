@@ -1,0 +1,84 @@
+{% load static %}
+<!-- Sidebar wrapper -->
+<aside id="sidebar" class="sidebar d-flex flex-column flex-shrink-0">
+
+  <!-- Logo + hamburger -->
+  <div class="sidebar-header d-flex align-items-center">
+    <img src="{% static 'images/Elinklogo.png' %}" alt="E-Link" class="sidebar-logo">
+    {% comment %} <span class="sidebar-title ms-2">E‑LINK</span> {% endcomment %}
+
+    <!-- hamburger for collapse/expand -->
+    <button class="btn btn-sm ms-auto sidebar-toggle" type="button"
+            data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+            aria-expanded="true" aria-controls="sidebarMenu">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <!-- Scrollable nav -->
+  <div id="sidebarMenu" class="collapse show sidebar-body">
+    <ul class="nav nav-pills flex-column mb-auto">
+
+      <!-- Dashboard -->
+      <li class="nav-item">
+        {% comment %} <a href="{% url 'dashboard' %}" class="nav-link"> {% endcomment %}
+          <i class="bi bi-speedometer2 sidebar-icon"></i>
+          <span class="sidebar-text">Dashboard</span>
+        {% comment %} </a> {% endcomment %}
+      </li>
+
+      <!-- Administrator (simple link) -->
+      <li>
+        {% comment %} <a href="{% url 'admin_home' %}" class="nav-link"> {% endcomment %}
+          <i class="bi bi-person-badge sidebar-icon"></i>
+          <span class="sidebar-text">Administrator</span>
+        {% comment %} </a> {% endcomment %}
+      </li>
+
+      <!-- Back Office (cascading submenu) -->
+      <li class="nav-item">
+        <button class="nav-link d-flex align-items-center w-100 sidebar-sub-toggle"
+                data-bs-toggle="collapse" data-bs-target="#backofficeSub"
+                aria-expanded="false">
+          <i class="bi bi-briefcase sidebar-icon"></i>
+          <span class="sidebar-text flex-grow-1 text-start">Back Office</span>
+          <i class="bi bi-chevron-down small ms-1 sidebar-arrow"></i>
+        </button>
+        <div class="collapse sidebar-submenu" id="backofficeSub">
+          {% comment %} <a href="{% url 'raise_ticket' %}" class="nav-link"> {% endcomment %}
+            <span class="sidebar-bullet"></span>
+            <span class="sidebar-text">Raise Ticket [ IT Help Desk ]</span>
+          {% comment %} </a> {% endcomment %}
+          {% comment %} <a href="{% url 'helpdesk_dashboard' %}" class="nav-link"> {% endcomment %}
+            <span class="sidebar-bullet"></span>
+            <span class="sidebar-text">IT Help Desk Dashboard</span>
+          {% comment %} </a> {% endcomment %}
+          {% comment %} <a href="{% url 'document_mgmt' %}" class="nav-link"> {% endcomment %}
+            <span class="sidebar-bullet"></span>
+            <span class="sidebar-text">Document Management System</span>
+          {% comment %} </a> {% endcomment %}
+          <!-- add other Back Office items here -->
+        </div>
+      </li>
+
+      <!-- Billing Management -->
+      <li>
+        {% comment %} <a href="{% url 'billing_home' %}" class="nav-link"> {% endcomment %}
+          <i class="bi bi-receipt sidebar-icon"></i>
+          <span class="sidebar-text">Billing Management</span>
+        {% comment %} </a> {% endcomment %}
+      </li>
+
+      <!-- Collection Management -->
+      <li>
+        {% comment %} <a href="{% url 'collection_home' %}" class="nav-link"> {% endcomment %}
+          <i class="bi bi-cash-coin sidebar-icon"></i>
+          <span class="sidebar-text">Collection Management</span>
+        {% comment %} </a> {% endcomment %}
+      </li>
+
+      <!-- Add remaining modules similarly... -->
+    </ul>
+  </div>
+
+</aside>

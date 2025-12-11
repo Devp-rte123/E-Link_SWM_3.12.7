@@ -1,0 +1,97 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f6fa;
+    /* light background for content area */
+}
+
+/* Reduce navbar text size a bit for top-right items */
+.navbar-text {
+    font-size: 0.95rem;
+}
+
+/* Ensure some padding from the right edge on large screens */
+.navbar-nav {
+    padding-right: 0.5rem;
+}
+
+
+/* Background for pages like login and landing page */
+.login-bg-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Fixed full-screen background image */
+.login-bg-image {
+    position: fixed;
+    inset: 0;
+    background-image: url("../images/LandingPageBackgorund.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+}
+
+/* Make page fill viewport, with sticky footer */
+.sw-body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flex column: navbar, main, footer */
+.sw-page {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main area grows to push footer down when content is short */
+.sw-main {
+    flex: 1 0 auto;
+}
+
+/* Footer stays at bottom but moves down if content is taller */
+.sw-footer {
+    flex-shrink: 0;
+}
+
+/* Background for pages like login and landing page */
+
+/* login page css changes as per new design */
+section.login {
+    padding: 4rem 0;
+}
+
+.login-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.login-body h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.login-card .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #555;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.login-card .form-control:focus {
+    border-color: #007bff;
+    box-shadow: none;
+}
+
+/* login page css changes as per new design */
